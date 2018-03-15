@@ -11,7 +11,7 @@ public class ConnectionFactory {
     private static final String PASSWORD = "root";
     private Connection conn = null;
 
-    public Connection getConnection()  {
+    public Connection getConnection()  { //This method returns Connection and give ability to get access to db
         try{
         conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         return conn;
