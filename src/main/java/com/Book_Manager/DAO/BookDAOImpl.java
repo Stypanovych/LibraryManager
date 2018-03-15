@@ -13,7 +13,7 @@ public class BookDAOImpl implements BookDAO {
 
 
     @Override
-    public void addBook(Book book) throws SQLException {
+    public void addBook(Book book) throws SQLException {//Class connect to db and inserts data using JDBC
         Statement stmt = null;
         String add = "INSERT INTO book(book_name, author_name) VALUES ('" + book.getBook_name() + "','" + book.getAuthor_name() +"') ";
         try {
@@ -65,12 +65,11 @@ public class BookDAOImpl implements BookDAO {
 
 
     @Override
-    public void getAllBooks() {
+    public void getAllBooks() { // Output all data from db 
         String allBooks = "SELECT * FROM book.book";
         try {
             Statement statement = connectionFactory.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery(allBooks);
-
             while (resultSet.next()){
                 System.out.println("Id:"+ resultSet.getInt("id") +" "+ resultSet.getString("author_name")+" "
                         + resultSet.getString("book_name"));
