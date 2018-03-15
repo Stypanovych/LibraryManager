@@ -2,12 +2,12 @@ package com.Book_Manager.Book;
 
 import java.io.Serializable;
 
-public class Book implements Serializable {
+public class Book implements Serializable { //Creating POJO 
 
     private int id;
     private String book_name;
     private String author_name;
-    private String new_name ;
+    private String new_name ; //Variable for setting new book name
 
     public String getNew_name() {
         return new_name;
